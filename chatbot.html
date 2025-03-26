@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .chat-container {
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background: #e0e0e0;
+        }
+        .input-box {
+            display: flex;
+            margin-top: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            let inputField = document.getElementById("user-input");
+            let chatBox = document.getElementById("chat-box");
+            let userMessage = inputField.value.trim();
+            
+            if (userMessage === "") return;
+            
+            let userMessageDiv = document.createElement("div");
+            userMessageDiv.className = "message user-message";
+            userMessageDiv.textContent = userMessage;
+            chatBox.appendChild(userMessageDiv);
+            
+            inputField.value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+            
+            setTimeout(() => {
+                let botMessageDiv = document.createElement("div");
+                botMessageDiv.className = "message bot-message";
+                botMessageDiv.textContent = getBotResponse(userMessage);
+                chatBox.appendChild(botMessageDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+        
+        function getBotResponse(input) {
+            let responses = {
+                "hello": "Hi there! How can I help?",
+                "how are you": "I'm just a bot, but I'm doing great!",
+                "bye": "Goodbye! Have a nice day!",
+                "unique features of vivo v29": "The Product has some unique features like wireless charging,long lasting batteries and it has water and dust resistance.",
+                "speciality of HP Pavilion x360 laptop " :"It has some unique factore like gaming,video editing, Touch sceen and having fast and versatile connectivity options with speed upto 40Gbps.",
+                "give Godrej company air coolers details and is it good for our houses" :"Yes absolutely it is good for our houses,Gorej Company's air coolers has several unique features that set them apart from other cooling solutions. One of the standout features is their smart cooling technology, which utilizes advanced sensors to detect temperature and humidity levels, adjusting the cooling accordingly. This ensures that the air cooler provides optimal cooling while minimizing energy consumption. Additionally, Gorej air coolers employ evaporative cooling technology, which is not only energy-efficient but also environmentally friendly. Furthermore, some models come equipped with built-in air purifiers, removing pollutants and allergens from the air to provide a healthier breathing environment. Other notable features include variable speed control, large water tank capacities, compact designs, and remote control functionality, making Gorej air coolers a convenient and effective cooling solution for various settings.",
+                "Thank You":"Thank You!"
+            };
+            return responses[input.toLowerCase()] || "sorry,This product is unavailable present.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ body{
+                background-color:#ddcfe6 ;
+            }
+            * {box-sizing: border-box;}
+            h1{
+                text-align:center;
+                font-size: 45px;
+                color: rgb(10, 79, 79);
+            }
+
+
+           
+/*#Z{
+    
+    padding-top: 6px;
+    
+}*/
+
+/*#A{
+    text-align: center;
+    padding-left: 40px;padding-top: 8px;
+background-color: rgb(255, 255, 255);
+color: azure;
+width:25%;
+height:38px;
+float:left;
+}
+
+#C{
+    text-align: center;
+    padding-left: 20px;padding-top: 8px;
+background-color: rgb(255, 255, 255);
+
+width:25%;height:38px;
+float:left;
+}
+#D{
+    text-align: center;
+    padding-top: 8px;
+    padding-left: 20px;
+background-color: rgb(255, 255, 255);
+
+width:25%;height:38px;
+float:left;
+}
+#E{
+    text-align: center;
+    padding-left: 20px;padding-top: 8px;
+background-color: rgb(255, 255, 255);
+
+width:25%;height:38px;
+float:left;
+}
+*/
+#Z {
+                background-color: #4b657d;
+                position: absolute;
+                width: 100%;
+            }
+
+#Z a {
+                float:left;
+                display: block;
+                color: #c1e865;
+                text-align: center;
+                padding: 12px;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+
+#Z a:hover{
+    background-color:rgb(255, 255, 255);
+    color:rgb(211, 133, 221)
+}
+#D a:hover{
+    background-color: #ddcfe6;
+    color: black;
+}
+.navlist-right{
+                float:right;
+            }
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+  <h1>FreeText</h1>
+
+
+  <div id="Z">
+      <div1 id="A"><a href="Home.html">HOME</a></div1>
+      
+      <div1 id="A"><a href="Product.html"> PRODUCTS</a></div1>
+
+      <div1 id="A"><a href="AirCoolers.html"> AIR COOLERS</a></div1>
+
+
+      <div1 id="A"><a href="SkinCare.html"> SKIN CARE</a></div1>
+
+
+      <div3 id="C"><a href="Cart.html">CART</a></div3>
+
+      <div id="B"><a href="Aboutus.html">ABOUT US</a></div>
+
+      <div4 id="D"><a href="ContactUs.html">CONTACT</a></div4>
+
+      <div1 id="A"><a href="chatbot.html"> CHATBOT</a></div1>
+
+
+      <div5 id="E"><a href="Login.html">LOGOUT</a></div5>
+
+
+
+  </div>
+ <br>
+ <br>
+ <br>
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="Thanks.html">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" >
+      <option value="india">India</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+    <a href="Thanks.html"><input type="submit" value="Submit"></a>
+  </form>
+</div>
+
+</body>
+</html>
